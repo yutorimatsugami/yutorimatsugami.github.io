@@ -19,7 +19,7 @@ Only structure and hierarchy were used as references. Reference-site code, portr
 - A short digital business card with a share dialog.
 - Embedded Inter for Latin text and Noto Sans JP for Japanese; system monospace for years and small labels. The name uses medium weight with -0.03em tracking.
 - Desktop: introductory text and an original geometric coordinate motif.
-- Mobile: one column; name, topics, email, and social links precede the work section.
+- Mobile: one column; the name and student affiliation introduce the person, followed by research interests and prominent GitHub/X buttons. The email address and a compact copy control sit underneath; Hugging Face and ORCID follow in a separate research-profile row.
 - The introduction describes language- and vision-guided robot systems; research interests remain visible as topic labels. Descriptions use 15px text, with 14px Japanese supporting text.
 - Two selected work entries: SAM3 software and RSJ2026 co-authored work.
 - Compact team result rows; education, teaching, scholarship, and career offer below.
@@ -29,8 +29,8 @@ Only structure and hierarchy were used as references. Reference-site code, portr
 
 ## Content hierarchy
 
-1. Name, research interests, email
-2. GitHub, X, Hugging Face, ORCID
+1. Name, student affiliation, research interests
+2. GitHub and X buttons, email, then Hugging Face and ORCID
 3. Research & projects
 4. Robotics competitions
 5. Background

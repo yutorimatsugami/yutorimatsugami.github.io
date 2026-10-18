@@ -285,24 +285,30 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     .eyebrow::before { content:""; width:6px; height:6px; background:currentColor; }
     h1 { margin:0; font-size:clamp(46px,6.4vw,78px); font-weight:500; line-height:1.08; letter-spacing:-.03em; }
     h1>span { display:block; }
-    .jp-name { margin:17px 0 25px; font-size:18px; color:var(--muted); letter-spacing:.28em; }
+    .jp-name { margin:17px 0 8px; font-size:18px; color:var(--muted); letter-spacing:.28em; }
+    .affiliation { margin:0 0 23px; color:var(--muted); font-size:13px; line-height:1.7; }
     .intro { max-width:480px; margin:0; font-size:18px; line-height:1.7; }
     .intro-ja { max-width:480px; margin:9px 0 0; color:var(--muted); font-size:14px; line-height:1.9; }
     .topics { display:flex; flex-wrap:wrap; gap:7px; padding:0; margin:25px 0 29px; list-style:none; }
     .topics li { padding:4px 10px; border:1px solid var(--line); border-radius:5px; color:#bac7d2; font:11px/1.6 var(--mono); }
     .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+    .hero-actions .button { min-width:128px; }
     .button { display:inline-flex; justify-content:center; align-items:center; gap:10px; min-height:46px; padding:10px 17px; border:1px solid var(--line); border-radius:7px; color:var(--text); background:var(--surface); font-size:13px; font-weight:500; transition:background .16s,border-color .16s; }
     .button:hover { background:var(--surface-hover); border-color:#4a6373; }
     .button.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
     .button.primary:hover { background:#b2e3f5; border-color:#b2e3f5; }
     .button.quiet { background:transparent; color:var(--muted); }
-    .email-caption { display:inline-block; margin-top:13px; color:var(--muted); font:12px/1.6 var(--mono); overflow-wrap:anywhere; }
+    .contact-row { display:flex; flex-wrap:wrap; align-items:center; gap:0 14px; margin-top:7px; }
+    .email-caption { display:inline-flex; align-items:center; min-height:44px; color:var(--muted); font:12px/1.6 var(--mono); overflow-wrap:anywhere; }
     .email-caption:hover { color:var(--accent); }
+    .copy-email { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:0 3px; border:0; background:none; color:var(--muted); font-size:12px; }
+    .copy-email:hover { color:var(--accent); }
+    .copy-email svg { width:14px; height:14px; }
     .hero-art { position:relative; align-self:center; padding:22px 0 0; }
     .hero-art::before { content:""; position:absolute; inset:15%; background:radial-gradient(ellipse,#25455a40,transparent 68%); pointer-events:none; }
     .hero-art svg { width:100%; height:auto; position:relative; }
     .art-caption { position:absolute; bottom:2px; right:15px; color:#91a7b8; font:10px/1.5 var(--mono); letter-spacing:.14em; }
-    .socials { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:23px 0; margin-bottom:65px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .socials { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; padding:16px 0; margin-bottom:65px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
     .socials a { display:flex; justify-content:space-between; align-items:center; min-height:44px; padding:0 13px; font-size:13px; border-radius:6px; }
     .socials a:hover { background:var(--surface); color:var(--accent); }
     .socials .arrow { color:var(--muted); }
@@ -366,12 +372,13 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       .hero { grid-template-columns:1fr; padding:43px 0 34px; gap:0; }
       .eyebrow { margin-bottom:18px; font-size:10px; }
       h1 { font-size:clamp(44px,12vw,64px); }
-      .jp-name { margin:13px 0 20px; font-size:16px; }
+      .jp-name { margin:13px 0 7px; font-size:16px; }
+      .affiliation { margin-bottom:20px; }
       .intro { font-size:16px; max-width:390px; }
       .intro-ja { font-size:14px; }
       .topics { margin:20px 0 24px; }
       .hero-art { display:none; }
-      .socials { grid-template-columns:1fr 1fr; gap:2px 14px; padding:12px 0; margin-bottom:45px; }
+      .socials { gap:2px 14px; padding:12px 0; margin-bottom:45px; }
       .socials a { padding-inline:5px; min-height:46px; font-size:13px; }
       .section { margin-bottom:45px; }
       .section-heading { margin-bottom:18px; gap:10px; }
@@ -392,6 +399,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     @media (max-width:360px) {
       .container { width:calc(100% - 32px); }
       .brand-label { display:none; }
+      .hero { padding-top:27px; }
       .work-card { padding:20px; }
       .button { padding-inline:13px; }
       dialog { padding:20px; }
@@ -419,14 +427,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <p class="eyebrow">ROBOTICS &amp; AI</p>
           <h1 id="name"><span>Yutori</span><span>Matsugami<span class="sr-only" lang="ja"> / 松上 愉</span></span></h1>
           <p class="jp-name" lang="ja" aria-hidden="true">松上 愉</p>
+          <p class="affiliation">Robotics student · IPUT Osaka</p>
           <p class="intro">Building robot systems guided<br>by language and vision.</p>
           <p class="intro-ja" lang="ja">言語と視覚からロボットを動かす研究・開発に取り組んでいます。</p>
           <ul class="topics" aria-label="Research interests"><li>Robotics</li><li>ROS</li><li>AI</li><li>LLM</li><li>VLA</li></ul>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:ok230200@oks.iput.ac.jp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>Send an email</a>
-            <button class="button quiet" id="copy-email" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 8V4H4v11h4" stroke-linecap="round" stroke-linejoin="round"/></svg>Copy email</button>
+          <nav class="hero-actions" aria-label="Connect on GitHub and X">
+            <a class="button primary" href="https://github.com/yutorimatsugami" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button" href="https://x.com/yutorirobo04" target="_blank" rel="noopener noreferrer">X <span aria-hidden="true">↗</span></a>
+          </nav>
+          <div class="contact-row">
+            <a class="email-caption" href="mailto:ok230200@oks.iput.ac.jp">ok230200@oks.iput.ac.jp</a>
+            <button class="copy-email" id="copy-email" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 8V4H4v11h4" stroke-linecap="round" stroke-linejoin="round"/></svg>Copy email</button>
           </div>
-          <a class="email-caption" href="mailto:ok230200@oks.iput.ac.jp">ok230200@oks.iput.ac.jp</a>
         </div>
         <div class="hero-art" aria-hidden="true">
           <svg viewBox="0 0 410 400" fill="none">
@@ -450,9 +462,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <span class="art-caption">PERCEPTION → ACTION</span>
         </div>
       </section>
-      <nav class="socials" aria-label="Find me online">
-        <a href="https://github.com/yutorimatsugami" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
-        <a href="https://x.com/yutorirobo04" target="_blank" rel="noopener noreferrer">X <span class="arrow" aria-hidden="true">↗</span></a>
+      <nav class="socials" aria-label="Research profiles">
         <a href="https://huggingface.co/yutori" target="_blank" rel="noopener noreferrer">Hugging Face <span class="arrow" aria-hidden="true">↗</span></a>
         <a href="https://orcid.org/0009-0009-7290-9276" target="_blank" rel="noopener noreferrer">ORCID / Research <span class="arrow" aria-hidden="true">↗</span></a>
       </nav>
